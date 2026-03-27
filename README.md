@@ -1,4 +1,4 @@
-Atividade 1
+## ATIVIDADE 1
 
 ## Exercícios
 
@@ -88,7 +88,7 @@ Foram feitos vários exercícios em C envolvendo vetores, matrizes, struct e pon
 - sem vetor estático (ex 10)
 - acesso usando ponteiros (ex 10)
 ---------------------------------
-Atividade 2
+## ATIVIDADE 2
 ## Desafio 1
 Verificação de expressão.
 O programa:
@@ -126,7 +126,7 @@ O programa:
 - não foi utilizado vetor auxiliar
 - manipulação feita apenas com a pilha
 ---------------------------------------------------------------
-Atividade 3
+## ATIVIDADE 3
 ## Desafio 1
 Fila de clientes.
 Cada cliente tem:
