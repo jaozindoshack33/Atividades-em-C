@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct No {
+    char c;
+    struct No *prox;
+} No;
+
+typedef struct {
+    No *topo;
+} Pilha;
+
+void init(Pilha *p) {
+    p->topo = NULL;
+}
+
+int vazia(Pilha *p) {
+    return p->topo == NULL;
+}
+
+void push(Pilha *p, char c) {
+    No *n = (No*) malloc(sizeof(No));
+    if(n != NULL) {
+        n->c = c;
+        n->prox = p->topo;
+        p->topo = n;
+    }
+}
+
+char pop(Pilha *p) {
+    if(vazia(p)) return '\0';
+
+    No *t = p->topo;
+    char c = t->c;
+    p->topo = t->prox;
+    free(t);
+
+    return c;
+}
+
+int main() {
+    Pilha p;
+    init(&p);
+
+    char str[100];
+
+    printf("Digite a string: ");
+    scanf(" %[^\n]", str);
+
+    char *ptr = str;
+
+    // empilha cada caractere
+    while(*ptr != '\0') {
+        push(&p, *ptr);
+        ptr++;
+    }
+
+    printf("Invertida: ");
+
+    // desempilha e imprime (já sai invertido)
+    while(!vazia(&p)) {
+        printf("%c", pop(&p));
+    }
+
+    printf("\n");
+
+    return 0;
+}
